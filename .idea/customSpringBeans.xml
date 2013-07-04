@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CustomBeanRegistry">
+    <option name="map">
+      <map>
+        <entry key="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;amq:broker xmlns:amq=&quot;http://activemq.apache.org/schema/core&quot; id=&quot;broker&quot; useJmx=&quot;true&quot; persistent=&quot;false&quot; brokerName=&quot;myBroker&quot; useShutdownHook=&quot;false&quot;&gt;&#10;  &lt;amq:transportConnectors&gt;&#10;    &lt;amq:transportConnector name=&quot;vm&quot; uri=&quot;vm://myBroker&quot; /&gt;&#10;  &lt;/amq:transportConnectors&gt;&#10;&lt;/amq:broker&gt;&#10;&#10;">
+          <value>
+            <list>
+              <CustomBeanInfo>
+                <option name="beanName" value="broker" />
+                <option name="beanClassName" value="org.apache.activemq.xbean.XBeanBrokerService" />
+                <option name="idAttribute" value="id" />
+              </CustomBeanInfo>
+            </list>
+          </value>
+        </entry>
+        <entry key="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;amq:connectionFactory xmlns:amq=&quot;http://activemq.apache.org/schema/core&quot; id=&quot;jmsConnectionFactory&quot; brokerURL=&quot;tcp://localhost:61616&quot; /&gt;&#10;&#10;">
+          <value>
+            <list>
+              <CustomBeanInfo>
+                <option name="beanName" value="jmsConnectionFactory" />
+                <option name="beanClassName" value="org.apache.activemq.spring.ActiveMQConnectionFactory" />
+                <option name="idAttribute" value="id" />
+              </CustomBeanInfo>
+            </list>
+          </value>
+        </entry>
+        <entry key="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;amq:queue xmlns:amq=&quot;http://activemq.apache.org/schema/core&quot; id=&quot;notificationQueue&quot; physicalName=&quot;backtype.storm.contrib.example.queue&quot; /&gt;&#10;&#10;">
+          <value>
+            <list>
+              <CustomBeanInfo>
+                <option name="beanName" value="notificationQueue" />
+                <option name="beanClassName" value="org.apache.activemq.command.ActiveMQQueue" />
+                <option name="idAttribute" value="id" />
+              </CustomBeanInfo>
+            </list>
+          </value>
+        </entry>
+        <entry key="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;amq:topic xmlns:amq=&quot;http://activemq.apache.org/schema/core&quot; id=&quot;notificationTopic&quot; physicalName=&quot;backtype.storm.contrib.example.topic&quot; /&gt;&#10;&#10;">
+          <value>
+            <list>
+              <CustomBeanInfo>
+                <option name="beanName" value="notificationTopic" />
+                <option name="beanClassName" value="org.apache.activemq.command.ActiveMQTopic" />
+                <option name="idAttribute" value="id" />
+              </CustomBeanInfo>
+            </list>
+          </value>
+        </entry>
+        <entry key="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;broker:broker xmlns:broker=&quot;http://activemq.apache.org/schema/core&quot; id=&quot;broker&quot; useJmx=&quot;true&quot; persistent=&quot;false&quot; brokerName=&quot;myBroker&quot; useShutdownHook=&quot;false&quot;&gt;&#10;  &lt;broker:transportConnectors&gt;&#10;    &lt;broker:transportConnector name=&quot;vm&quot; uri=&quot;vm://myBroker&quot; /&gt;&#10;  &lt;/broker:transportConnectors&gt;&#10;&lt;/broker:broker&gt;&#10;&#10;">
+          <value>
+            <list>
+              <CustomBeanInfo>
+                <option name="beanName" value="vm" />
+                <option name="beanClassName" value="org.apache.activemq.broker.TransportConnector" />
+                <option name="idAttribute" value="name" />
+                <option name="path">
+                  <list>
+                    <option value="0" />
+                    <option value="0" />
+                  </list>
+                </option>
+              </CustomBeanInfo>
+              <CustomBeanInfo>
+                <option name="beanName" value="broker" />
+                <option name="beanClassName" value="org.apache.activemq.xbean.XBeanBrokerService" />
+                <option name="idAttribute" value="id" />
+              </CustomBeanInfo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="policies">
+      <map>
+        <entry>
+          <key>
+            <MyQName>
+              <option name="namespace" value="http://activemq.apache.org/schema/core" />
+              <option name="localName" value="broker" />
+            </MyQName>
+          </key>
+          <value>
+            <CustomBeanInfo>
+              <option name="beanClassName" value="org.apache.activemq.xbean.XBeanBrokerService" />
+              <option name="idAttribute" value="id" />
+            </CustomBeanInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
+
