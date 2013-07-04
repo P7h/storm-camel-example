@@ -26,8 +26,8 @@
         </amq:transportConnectors>
     </amq:broker>
 
-    <amq:queue id="notificationQueue" physicalName="backtype.storm.contrib.example.queue" />
-    <amq:topic id="notificationTopic" physicalName="backtype.storm.contrib.example.topic" />
+    <amq:queue id="notificationQueue" physicalName="my-queue" />
+    <amq:topic id="notificationTopic" physicalName="my-topic" />
     <!--<amq:connectionFactory id="jmsConnectionFactory" brokerURL="tcp://localhost:61616" />-->
     <amq:connectionFactory id="jmsConnectionFactory" brokerURL="vm://myBroker" />
 

@@ -11,7 +11,7 @@ public class StreamingRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("activemq:backtype.storm.contrib.example.queue")
+        from("activemq:my-queue")
                 .to("websocket://storm?sendToAll=true");
     }
 }
