@@ -1,27 +1,21 @@
 package nl.java.runner;
 
-import nl.avisi.feeder.RandomWordFeeder;
-import nl.avisi.jms.JsonTupleProducer;
-import nl.avisi.jms.SpringJmsProvider;
-import nl.avisi.processor.WordCounterBolt;
-
-import org.apache.xbean.spring.context.ClassPathXmlApplicationContext;
-import org.springframework.context.ApplicationContext;
-
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.Session;
-import javax.jms.TextMessage;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.contrib.jms.JmsMessageProducer;
 import backtype.storm.contrib.jms.JmsProvider;
-import backtype.storm.contrib.jms.JmsTupleProducer;
 import backtype.storm.contrib.jms.bolt.JmsBolt;
-import backtype.storm.contrib.jms.spout.JmsSpout;
 import backtype.storm.topology.TopologyBuilder;
 import backtype.storm.tuple.Tuple;
+import nl.avisi.feeder.RandomWordFeeder;
+import nl.avisi.jms.SpringJmsProvider;
+import nl.avisi.processor.WordCounterBolt;
+import org.apache.xbean.spring.context.ClassPathXmlApplicationContext;
+import org.springframework.context.ApplicationContext;
 
 /**
  * @author robbreuk
@@ -54,6 +48,5 @@ public class Runner {
         LocalCluster cluster = new LocalCluster();
 
         cluster.submitTopology("word-count", conf, builder.createTopology());
-
     }
 }

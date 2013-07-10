@@ -1,7 +1,5 @@
 package nl.avisi.camel;
 
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 
 /**
@@ -9,9 +7,9 @@ import org.apache.camel.builder.RouteBuilder;
  */
 public class StreamingRoute extends RouteBuilder {
 
-    @Override
-    public void configure() throws Exception {
-        from("activemq:my-queue")
-                .to("websocket://storm?sendToAll=true");
-    }
+	@Override
+	public void configure() throws Exception {
+		from("activemq:my-queue")
+				.to("websocket://storm?sendToAll=true");
+	}
 }

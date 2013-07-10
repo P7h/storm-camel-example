@@ -19,7 +19,7 @@
 
 <html>
 <head>
-    <title>Camel Storm WebSocket Example</title>
+    <title>Storm WebSocket Demo</title>
     <style type="text/css">
         .chart div {
             font: 10px sans-serif;
@@ -39,10 +39,20 @@
             fill: white;
         }
     </style>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
     <script type='text/javascript'>
+        $(function () {
+            $("input[type=submit], a, button")
+                    .button()
+                    .click(function (event) {
+                        event.preventDefault();
+                    });
+        });
+
         if (!window.WebSocket) {
             alert("WebSocket not supported by this browser");
         }
@@ -73,21 +83,21 @@
 //            redraw(data);
         }
         var socket = {
-            start : function() {
+            start: function () {
                 var location = "ws://localhost:9292/storm";
                 this._ws = new WebSocket(location);
                 this._ws.onmessage = this._onmessage;
                 this._ws.onclose = this._onclose;
             },
 
-            _onmessage : function(m) {
+            _onmessage: function (m) {
                 if (m.data) {
                     var theData = m.data;
                     newDataReceived(m.data);
                 }
             },
 
-            _onclose : function(m) {
+            _onclose: function (m) {
                 if (this._ws) {
                     this._ws.close();
                 }
@@ -101,15 +111,19 @@
         function start() {
             socket.start();
         }
+
     </script>
 </head>
 <body>
+<center>
 
-
-<button value="Stop" onclick="stop()">Stop</button>
-<button value="Start" onclick="start()">Start</button>
-
-<div id="chart" style="width:600px; height:400px;"></div>
+<div id="btns" style="width:700px;">
+    <center>
+        <button value="Start" onclick="start()">Start</button>
+        <button value="Stop" onclick="stop()">Stop</button>
+    </center>
+</div>
+<div id="chart" style="width:700px; height:500px;"></div>
 <div id="raw"></div>
 
 <script>
@@ -117,9 +131,9 @@
     function redraw(index, data) {
         if (index < 0) {
             var series = {
-                id : data.x,
-                name : data.x,
-                data : [data.y]
+                id: data.x,
+                name: data.x,
+                data: [data.y]
             };
             chart.addSeries(series);
 
@@ -134,54 +148,59 @@
     }
 
     var chart = new Highcharts.Chart({
-        chart : {
-            renderTo : 'chart',
-            type : 'column'
+        chart: {
+            renderTo: 'chart',
+            type: 'column'
         },
-        title : {
-            text : 'Word count'
+        title: {
+            text: 'Visualization of random words'
         },
-        xAxis : {
-            title : {
-                text : null
+        xAxis: {
+            title: {
+                text: null
             }
         },
-        yAxis : {
-            min : 0,
-            title : {
-                text : 'Count',
-                align : 'high'
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Count',
+                align: 'high'
             },
-            labels : {
-                overflow : 'justify'
+            labels: {
+                overflow: 'justify'
             }
         },
-        plotOptions : {
-            bar : {
-                dataLabels : {
-                    enabled : true
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
                 }
             }
         },
-        legend : {
-            layout : 'vertical',
-            align : 'right',
-            verticalAlign : 'top',
-            floating : true,
-            borderWidth : 1,
-            backgroundColor : '#FFFFFF',
-            shadow : true
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: '#FFFFFF',
+            shadow: true
         },
-        credits : {
-            enabled : false
+        credits: {
+            enabled: false
         },
-        series : [
+        series: [
         ]
     });
 
 
 </script>
+<div id="texthilite" style="width:700px;">
+    <center>
+        <h2>Visualization of random words<br>
+            Stack: Storm Topology, JMS, ActiveMQ, Websocket, HighCharts</h2>
+    </center>
+</div>
+</center>
 </body>
-
-
 </html>
