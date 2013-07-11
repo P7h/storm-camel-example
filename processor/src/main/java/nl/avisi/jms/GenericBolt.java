@@ -11,7 +11,8 @@ import backtype.storm.tuple.Tuple;
 
 @SuppressWarnings("serial")
 public class GenericBolt extends BaseRichBolt {
-    private OutputCollector collector;
+	private static final long serialVersionUID = 5586909800651507451L;
+	private OutputCollector collector;
     private boolean autoAck = false;
     private boolean autoAnchor = false;
     private Fields declaredFields;

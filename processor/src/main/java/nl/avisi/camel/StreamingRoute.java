@@ -5,10 +5,10 @@ import org.apache.camel.builder.RouteBuilder;
 /**
  * @author robbreuk
  */
-public class StreamingRoute extends RouteBuilder {
+public final class StreamingRoute extends RouteBuilder {
 
 	@Override
-	public void configure() throws Exception {
+	public final void configure() throws Exception {
 		from("activemq:my-queue")
 				.to("websocket://storm?sendToAll=true");
 	}

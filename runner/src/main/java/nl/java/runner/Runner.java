@@ -19,34 +19,35 @@ import org.springframework.context.ApplicationContext;
 
 /**
  * @author robbreuk
+ * @author Prashanth
  */
-public class Runner {
-    public static void main(String[] args) throws Exception {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+public final class Runner {
+	public static final void main(final String[] args) throws Exception {
+		final ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        JmsProvider jmsQueueProvider = new SpringJmsProvider(context, "jmsConnectionFactory", "notificationQueue");
+		final JmsProvider jmsQueueProvider = new SpringJmsProvider(applicationContext, "jmsConnectionFactory",
+				                                                          "notificationQueue");
 
-        TopologyBuilder builder = new TopologyBuilder();
+		final TopologyBuilder topologyBuilder = new TopologyBuilder();
 
-        JmsBolt jmsBolt = new JmsBolt();
-        jmsBolt.setJmsProvider(jmsQueueProvider);
-        jmsBolt.setJmsMessageProducer(new JmsMessageProducer() {
-            @Override
-            public Message toMessage(Session session, Tuple input) throws JMSException {
-                String json = "{\"word\":\"" + input.getString(0) + "\", \"count\":" + String.valueOf(input.getInteger(1)) + "}";
-                return session.createTextMessage(json);
-            }
-        });
+		final JmsBolt jmsBolt = new JmsBolt();
+		jmsBolt.setJmsProvider(jmsQueueProvider);
+		jmsBolt.setJmsMessageProducer(new JmsMessageProducer() {
+			@Override
+			public final Message toMessage(final Session session, final Tuple input) throws JMSException {
+				final String json = "{\"word\":\"" + input.getString(0) + "\", \"count\":" + String.valueOf(input.getInteger(1)) + "}";
+				return session.createTextMessage(json);
+			}
+		});
 
-        builder.setSpout("wordGenerator", new RandomWordFeeder());
-        builder.setBolt("counter", new WordCounterBolt()).shuffleGrouping("wordGenerator");
-        builder.setBolt("jmsBolt", jmsBolt).shuffleGrouping("counter");
+		topologyBuilder.setSpout("wordGenerator", new RandomWordFeeder());
+		topologyBuilder.setBolt("counter", new WordCounterBolt()).shuffleGrouping("wordGenerator");
+		topologyBuilder.setBolt("jmsBolt", jmsBolt).shuffleGrouping("counter");
 
-        Config conf = new Config();
-        conf.setDebug(true);
+		final Config config = new Config();
+		config.setDebug(false);
 
-        LocalCluster cluster = new LocalCluster();
-
-        cluster.submitTopology("word-count", conf, builder.createTopology());
-    }
+		final LocalCluster cluster = new LocalCluster();
+		cluster.submitTopology("word-count", config, topologyBuilder.createTopology());
+	}
 }

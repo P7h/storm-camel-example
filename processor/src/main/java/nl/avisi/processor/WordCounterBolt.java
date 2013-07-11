@@ -13,13 +13,14 @@ import backtype.storm.tuple.Values;
 /**
  * @author robbreuk
  */
-public class WordCounterBolt extends BaseBasicBolt {
+public final class WordCounterBolt extends BaseBasicBolt {
 
-    private Map<String, Integer> counts = new HashMap<String, Integer>();
+	private static final long serialVersionUID = -5809759391597965718L;
+	private final Map<String, Integer> counts = new HashMap<>();
 
     @Override
-    public void execute(Tuple tuple, BasicOutputCollector collector) {
-        String word = tuple.getString(0);
+    public final void execute(final Tuple tuple, final BasicOutputCollector collector) {
+	    final String word = tuple.getString(0);
 
         Integer count = counts.get(word);
         if (count == null) {
@@ -32,7 +33,7 @@ public class WordCounterBolt extends BaseBasicBolt {
     }
 
     @Override
-    public void declareOutputFields(OutputFieldsDeclarer declarer) {
+    public final void declareOutputFields(final OutputFieldsDeclarer declarer) {
         declarer.declare(new Fields("word", "count"));
     }
 }

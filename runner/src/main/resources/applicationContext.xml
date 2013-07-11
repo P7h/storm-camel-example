@@ -12,9 +12,7 @@
         <camel:routeBuilder ref="streamingRoute"/>
     </camel:camelContext>
 
-    <bean id="streamingRoute" class="nl.avisi.camel.StreamingRoute" />
-
-
+    <bean id="streamingRoute" class="nl.avisi.camel.StreamingRoute"/>
 
     <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent" depends-on="broker">
         <property name="brokerURL" value="vm://myBroker?create=false&amp;waitForStart=5000"/>
@@ -26,9 +24,9 @@
         </amq:transportConnectors>
     </amq:broker>
 
-    <amq:queue id="notificationQueue" physicalName="my-queue" />
-    <amq:topic id="notificationTopic" physicalName="my-topic" />
+    <amq:queue id="notificationQueue" physicalName="my-queue"/>
+    <amq:topic id="notificationTopic" physicalName="my-topic"/>
     <!--<amq:connectionFactory id="jmsConnectionFactory" brokerURL="tcp://localhost:61616" />-->
-    <amq:connectionFactory id="jmsConnectionFactory" brokerURL="vm://myBroker" />
+    <amq:connectionFactory id="jmsConnectionFactory" brokerURL="vm://myBroker"/>
 
 </beans>

@@ -19,7 +19,7 @@
 
 <html>
 <head>
-    <title>Storm WebSocket Demo</title>
+    <title>Demo of Storm Real-time Visualization thru WebSockets</title>
     <style type="text/css">
         .chart div {
             font: 15px Rokkitt;
@@ -38,12 +38,17 @@
         .chart text {
             fill: white;
         }
+
+        button {
+            font-family: Rokkitt;
+            text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.8);
+        }
     </style>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel='stylesheet' type='text/css' href="assets/css/bootstrap.min.css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"/>
     <script src="assets/js/bootstrap.min.js"/>
-    <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Rokkitt'>
 
     <script type='text/javascript'>
     </script>
@@ -52,12 +57,7 @@
 <center>
     &nbsp;&nbsp;&nbsp;
     <div id="btns" style="width:700px;">
-        <!-- <center>
-            <button value="Start" onclick="start()" style="font-family: Rokkitt; font-size: 2em; text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.8);">Start Viz</button>
-            <button value="Stop" onclick="stop()" style="font-family: Rokkitt; font-size: 2em; text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.8);">Stop Viz</button>
-        </center>-->
-        <button value="Start" id="start" class="btn btn-primary btn-large"
-                style="font-family: Rokkitt; text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.8);"><i
+        <button value="Start" id="start" class="btn btn-primary btn-large"><i
                 class="icon-white icon-play"></i> Start Viz
         </button>
         &nbsp;&nbsp;&nbsp;
@@ -209,7 +209,7 @@
     <div id="texthilite" style="width:700px;">
         <center>
             <h2 style="font-family: Rokkitt; text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.8);">
-                Stack: Storm Topology, JMS, ActiveMQ, Camel, WebSockets, HighCharts</h2>
+                Stack: Storm Topology, JMS, ActiveMQ, Camel, WebSockets, Highcharts</h2>
         </center>
     </div>
 </center>
