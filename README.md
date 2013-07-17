@@ -4,14 +4,15 @@
 ## Introduction
 This repository contains an application for demonstrating Storm distributed framework by counting the names of the companies fed randomly by the code [in the Spout] in real-time.<br>This project also visualizes the output in real-time using Queues, Websockets and Highcharts.<br>
 
-![Screenshot of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.png)
-
-![GIF of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.gif)
-
 [Storm](http://storm-project.net) is a free and open source distributed real-time computation system, developed at BackType by Nathan Marz and team. It has been open sourced by Twitter [post BackType acquisition] in August, 2011.<br>
 This application has been developed and tested with Storm v0.8.2 on Windows 7 in local mode. Application may or may not work with earlier or later versions than Storm v0.8.2.<br>
 
 This application has been forked and updated from Robin van Breukelen's [storm-camel-example](https://github.com/robinvanb/storm-camel-example) Project.
+
+## Demo
+![GIF of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.gif)
+
+![Screenshot of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.png)
 
 ## Features
 * Application receives a random company name from a Spout every 200 milliseconds.<br>
