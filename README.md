@@ -1,4 +1,4 @@
-# Storm - Camel - Websockets Demo
+# Real-time analysis and Viz with Storm-Camel-Highcharts
 ----------
 
 ## Introduction
@@ -12,11 +12,11 @@ This application has been forked and updated from Robin van Breukelen's [storm-c
 ## Features
 * Application receives a random company name from a Spout every 200 milliseconds.<br>
 * Bolt counts frequency of the each company name passed on from the Spout.<br>
-* This frequency is written to ActiveMQ using JMS. <br>
+* This frequency is written to ActiveMQ using JMS.<br>
 * Camel is used to read these values from ActiveMQ and also write to a Websocket.<br>
 * Front-end reads from the Websocket and visualizes the output in a Bar chart using Highcharts and updates the chart in real-time to reflect the latest count provided by the Bolt.<br>
-* Also this project has been made compatible with both Eclipse IDE and IntelliJ IDEA. Import the project in your favorite IDE and you can quickly follow the code.
-* As of today, this codebase has almost no or very less comments.
+* Also this project has been made compatible with both Eclipse IDE and IntelliJ IDEA. Import the project in your favorite IDE and you can quickly follow the code.<br>
+* As of today, this codebase has almost no or very less comments.<br>
 
 ## Demo
 ![GIF of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.gif)
@@ -33,14 +33,14 @@ This application has been forked and updated from Robin van Breukelen's [storm-c
 Also, please check [`pom.xml`](pom.xml) for complete information on the various dependencies of the project.<br>
 
 ## Requirements
-This project uses Maven to build and run the topology.<br>
 You need the following on your machine:
 
 * Oracle JDK >= 1.7.x
 * Apache Maven >= 3.1.0
 * Clone this repo and import as an existing Maven project to either Eclipse IDE or IntelliJ IDEA.
-
-Rest of the required frameworks and libraries are downloaded by Maven as required in the build process.
+* Rest of the required frameworks and libraries are downloaded by Maven as required in the build process.
+	* If not, please execute `mvn clean compile` command once at the root of this repo.
+* Launch your favorite IDE and run [`Runner.java`](runner/src/main/java/nl/java/runner/Runner.java).
 
 ## Usage
 To build and run this topology, you must use Java 1.7.
