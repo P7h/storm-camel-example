@@ -12,10 +12,11 @@ This application has been forked and updated from Robin van Breukelen's [storm-c
 ## Features
 * Application receives a random company name from a Spout every 200 milliseconds.<br>
 * Bolt counts frequency of the each company name passed on from the Spout.<br>
-* This frequency is written to ActiveMQ using JMS.<br>
-* Camel is used to read these values from ActiveMQ and also write to a Websocket.<br>
-* Front-end reads from the Websocket and visualizes the output in a Bar chart using Highcharts and updates the chart in real-time to reflect the latest count provided by the Bolt.<br>
-* Also this project has been made compatible with both Eclipse IDE and IntelliJ IDEA. Import the project in your favorite IDE and you can quickly follow the code.<br>
+* This frequency is written to ActiveMQ using a JMSBolt.<br>
+* Camel is used to read these tuples from ActiveMQ and also write to a WebSocket.<br>
+* A pure HTML5 front-end reads from the above Websocket and visualizes the output in a Bar chart using Highcharts and updates the chart in real-time to reflect the latest count provided by the Bolt.<br>
+* This project has also been made compatible with both Eclipse IDE and IntelliJ IDEA.
+	* Import the project in your favorite IDE and you can quickly follow the code.
 * As of today, this codebase has almost no or very less comments.<br>
 
 ## Demo
@@ -34,25 +35,31 @@ Also, please check [`pom.xml`](pom.xml) for complete information on the various 
 
 ## Requirements
 You need the following on your machine:
-
 * Oracle JDK >= 1.7.x
-* Apache Maven >= 3.1.0
+* Apache Maven >= 3.0.5
 * Clone this repo and import as an existing Maven project to either Eclipse IDE or IntelliJ IDEA.
-* Rest of the required frameworks and libraries are downloaded by Maven as required in the build process.
-	* If not, please execute `mvn clean compile` command once at the root of this repo.
-* Launch your favorite IDE and run [`Runner.java`](runner/src/main/java/nl/java/runner/Runner.java).
+	* Please enable / download Maven Plugin in the IDE.
 
 ## Usage
-To build and run this topology, you must use Java 1.7.
+To build and run this topology, you must use Java 1.7.<br>
 
 ### Local Mode:
-Local mode can also be run on Windows environment using either IntelliJ IDEA or Eclipse IDE. *Note*: Please be sure to clean your temp folder as it adds lot of temporary files in every run.<br>
-Just launch your favorite IDE and run [`Runner.java`](runner/src/main/java/nl/java/runner/Runner.java).<br>
-	
+Local mode can also be run on Windows environment using either IntelliJ IDEA or Eclipse IDE. *Note*: Please be sure to clean your temp folder as it adds lot of temporary files in every run.
+* Launch your favorite IDE and run [`Runner.java`](runner/src/main/java/nl/java/runner/Runner.java).<br>
+* All the required frameworks and libraries are downloaded by Maven as required in the above import process in the IDE.
+	* If not, please execute `mvn clean compile` command once at the root of this repo.
+* Launch a browser [preferably Google Chrome] and run [`index.html`](runner/src/main/resources/index.html) 
+	* Click on "Start Viz" button to trigger the initialization.<br>
+	* You can stop the visualization as well by clicking on "Stop Viz" button.<br>
+* This chart updates every second and displays real-time visualization of the words processed by the Bolts.<br>
+
+### Remote Mode:
+TBA.
+
 ## Problems
 If you find any issues, please report them either raising an [issue](https://github.com/P7h/storm-camel-example/issues) here on Github or alert me on my Twitter handle [@P7h](http://twitter.com/P7h). Or even better, please send a [pull request](https://github.com/P7h/storm-camel-example/pulls).
 Appreciate your help. Thanks!
 
 ## License
-Copyright &copy; 2013 Prashanth Babu.<br>
+Copyright &copy; 2013 Robin van Breukelen and Prashanth Babu.<br>
 Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
