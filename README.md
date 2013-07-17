@@ -9,11 +9,6 @@ This application has been developed and tested with Storm v0.8.2 on Windows 7 in
 
 This application has been forked and updated from Robin van Breukelen's [storm-camel-example](https://github.com/robinvanb/storm-camel-example) Project.
 
-## Demo
-![GIF of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.gif)
-
-![Screenshot of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.png)
-
 ## Features
 * Application receives a random company name from a Spout every 200 milliseconds.<br>
 * Bolt counts frequency of the each company name passed on from the Spout.<br>
@@ -22,6 +17,11 @@ This application has been forked and updated from Robin van Breukelen's [storm-c
 * Front-end reads from the Websocket and visualizes the output in a Bar chart using Highcharts and updates the chart in real-time to reflect the latest count provided by the Bolt.<br>
 * Also this project has been made compatible with both Eclipse IDE and IntelliJ IDEA. Import the project in your favorite IDE and you can quickly follow the code.
 * As of today, this codebase has almost no or very less comments.
+
+## Demo
+![GIF of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.gif)
+
+![Screenshot of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.png)
 
 ## Dependencies
 * Storm v0.8.2
