@@ -20,9 +20,9 @@ This application has been forked and updated from Robin van Breukelen's [storm-c
 * As of today, this codebase has almost no or very less comments.<br>
 
 ## Demo
-![GIF of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.gif)
+![GIF of visualization](Storm-Camel-Websockets__Demo.gif)
 
-![Screenshot of visualization](https://raw.github.com/P7h/storm-camel-example/master/Storm-Camel-Websockets__Demo.png)
+![Screenshot of visualization](Storm-Camel-Websockets__Demo.png)
 
 ## Dependencies
 * Storm v0.8.2
