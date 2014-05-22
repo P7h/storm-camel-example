@@ -1,7 +1,7 @@
 # Real-time analysis and Viz with Storm-Camel-Highcharts
 ----------
 
-## You might also be interested in checking out extension of this repo for Twitter sentiment of states of US using D3.js Choropleth Map and Highcharts Columncharts on [StormTweetsSentimentD3Viz](https://github.com/P7h/StormTweetsSentimentD3Viz).
+### You might also be interested in checking out extension of this repo for Twitter sentiment of states of US using D3.js Choropleth Map and Highcharts Columncharts on [StormTweetsSentimentD3Viz](https://github.com/P7h/StormTweetsSentimentD3Viz) and also a similar project for UK Twitter Sentiment on [StormTweetsSentimentD3UKViz](https://github.com/P7h/StormTweetsSentimentD3UKViz).
 
 ## Introduction
 This repository contains an application for demonstrating Storm distributed framework by counting the names of the companies fed randomly by the code [in the Spout] in real-time.<br>This project also visualizes the output in real-time using Queues, Websockets and Highcharts.<br>
