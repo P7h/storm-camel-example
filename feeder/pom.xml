@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>first-storm</artifactId>
-        <groupId>first-storm</groupId>
+        <groupId>org.p7h</groupId>
+        <artifactId>storm-camel</artifactId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,11 +13,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>storm</groupId>
-            <artifactId>storm</artifactId>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-core</artifactId>
         </dependency>
-
     </dependencies>
-
 
 </project>

@@ -3,10 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/feeder/feeder.iml" filepath="$PROJECT_DIR$/feeder/feeder.iml" />
-      <module fileurl="file://$PROJECT_DIR$/first-storm.iml" filepath="$PROJECT_DIR$/first-storm.iml" />
       <module fileurl="file://$PROJECT_DIR$/processor/processor.iml" filepath="$PROJECT_DIR$/processor/processor.iml" />
       <module fileurl="file://$PROJECT_DIR$/runner/runner.iml" filepath="$PROJECT_DIR$/runner/runner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/storm-camel.iml" filepath="$PROJECT_DIR$/storm-camel.iml" />
     </modules>
   </component>
 </project>
-

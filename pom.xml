@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>first-storm</groupId>
-    <artifactId>first-storm</artifactId>
+    <groupId>org.p7h</groupId>
+    <artifactId>storm-camel</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
 
@@ -16,38 +16,21 @@
     </modules>
 
     <properties>
-        <storm.version>0.8.2</storm.version>
-        <spark.version>0.9.9.7-SNAPSHOT</spark.version>
-        <camel.version>2.11.0</camel.version>
-        <activemq.version>5.8.0</activemq.version>
-        <spring.version>3.2.3.RELEASE</spring.version>
-        <xbean.version>3.7</xbean.version>
+        <storm.version>0.9.3</storm.version>
+        <camel.version>2.14.1</camel.version>
+        <activemq.version>5.10.0</activemq.version>
+        <spring.version>4.1.3.RELEASE</spring.version>
+        <xbean.version>4.1</xbean.version>
+        <slf4j.version>1.7.9</slf4j.version>
+        <log4j.version>1.2.17</log4j.version>
+        <storm-jms.version>0.9.0</storm-jms.version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>github-releases</id>
-            <url>http://oss.sonatype.org/content/repositories/github-releases/</url>
-        </repository>
-        <repository>
-            <id>clojars.org</id>
-            <url>http://clojars.org/repo</url>
-        </repository>
-        <repository>
-            <id>twitter4j</id>
-            <url>http://twitter4j.org/maven2</url>
-        </repository>
-        <repository>
-            <id>Spark repository</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>
-    </repositories>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>storm</groupId>
-                <artifactId>storm</artifactId>
+                <groupId>org.apache.storm</groupId>
+                <artifactId>storm-core</artifactId>
                 <version>${storm.version}</version>
                 <exclusions>
                     <exclusion>
@@ -64,36 +47,36 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
             <dependency>
-                <groupId>first-storm</groupId>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>3.0-alpha-1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.p7h</groupId>
                 <artifactId>processor</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
             <dependency>
-                <groupId>first-storm</groupId>
+                <groupId>org.p7h</groupId>
                 <artifactId>feeder</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-core</artifactId>
                 <version>${camel.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-websocket</artifactId>
                 <version>${camel.version}</version>
             </dependency>
-
-
             <dependency>
                 <groupId>com.github.ptgoetz</groupId>
                 <artifactId>storm-jms</artifactId>
-                <version>0.8.1</version>
+                <version>${storm-jms.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>log4j</groupId>
@@ -109,7 +92,6 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
             <dependency>
                 <groupId>org.apache.activemq</groupId>
                 <artifactId>activemq-camel</artifactId>
@@ -151,10 +133,7 @@
                 <artifactId>xbean-spring</artifactId>
                 <version>${xbean.version}</version>
             </dependency>
-
-
         </dependencies>
     </dependencyManagement>
-
 
 </project>

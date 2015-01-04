@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>first-storm</artifactId>
-        <groupId>first-storm</groupId>
+        <groupId>org.p7h</groupId>
+        <artifactId>storm-camel</artifactId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,17 +13,17 @@
 
     <dependencies>
         <dependency>
-            <groupId>storm</groupId>
-            <artifactId>storm</artifactId>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-core</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>first-storm</groupId>
+            <groupId>org.p7h</groupId>
             <artifactId>processor</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>first-storm</groupId>
+            <groupId>org.p7h</groupId>
             <artifactId>feeder</artifactId>
         </dependency>
 
@@ -64,20 +64,16 @@
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-websocket</artifactId>
         </dependency>
-
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.6.6</version>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <version>${log4j.version}</version>
         </dependency>
-
-
     </dependencies>
 
 
